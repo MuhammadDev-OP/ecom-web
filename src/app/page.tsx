@@ -13,7 +13,9 @@ export default async function Home() {
 
   return (
     <>
-      <div>asdsad</div>
+      <div>
+        
+      </div>
     </>
   );
 }
