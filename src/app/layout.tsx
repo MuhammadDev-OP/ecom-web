@@ -1,9 +1,7 @@
 import "./globals.css";
 import Header from "./components/layout/header";
-import next from "next";
 
 import { Sora } from 'next/font/google';
-import Hero from "./components/widgets/Hero";
 
 const sora = Sora({
   weight: '400',
