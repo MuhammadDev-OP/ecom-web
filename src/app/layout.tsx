@@ -1,5 +1,16 @@
 import "./globals.css";
 import Header from "./components/layout/header";
+import next from "next";
+
+import { Sora } from 'next/font/google';
+import Hero from "./components/widgets/Hero";
+
+const sora = Sora({
+  weight: '400',
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={sora.className}>
         <Header />
         {children}
       </body>

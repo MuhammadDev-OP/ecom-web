@@ -1,21 +1,13 @@
 import Image from "next/image";
-
-// export const getProductData = async () => {
-//   const res = await client.fetch(`*[_type=="product"]`)
-//   return res;
-
-// }
+import Hero from "./components/widgets/Hero";
 
 export default async function Home() {
-  // const data = await getProductData();
-
-  // console.log(data)
-
   return (
     <>
-      <div>
-        
-      </div>
-    </>
+    <main>
+    <Hero />
+    
+    </main>
+   </>
   );
 }
