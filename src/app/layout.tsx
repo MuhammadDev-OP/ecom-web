@@ -4,7 +4,7 @@ import Header from "./components/layout/header";
 import { Sora } from 'next/font/google';
 
 const sora = Sora({
-  weight: '400',
+  weight: ['400','500','600','700','800' ],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',

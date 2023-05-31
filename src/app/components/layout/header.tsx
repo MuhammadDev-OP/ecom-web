@@ -15,7 +15,7 @@ export default function Header() {
             <h2>Dine Market</h2>
           </div>
 
-          <ul className="flex space-x-10 text-lg font-normal ">
+          <ul className="lg:flex lg:space-x-10 lg:text-lg lg:font-normal hidden">
             <li>
               <Link href={"/"}>Female</Link>
             </li>
@@ -30,7 +30,7 @@ export default function Header() {
             </li>
           </ul>
 
-          <div className="w-[400px] border-gray-300 rounded flex relative items-center space-x-2 mx-2">
+          <div className="sm:w-[400px] border-gray-300 rounded sm:flex sm:relative items-center sm:space-x-2 sm:mx-2 hidden">
             <FiSearch className="ml-4 absolute" />
             <input
               className="w-full rounded-lg border-2  py-2 px-8 text-xs"
