@@ -36,34 +36,34 @@ export default function Hero() {
                   <span className="ml-2 font-bold">Start Shopping</span>
                 </button>
               </div>
-              <div className="flex mt-10 space-x-16">
+              <div className="flex mt-10 items-center space-y-3 md:space-x-16 flex-col md:flex-row">
               <Image
                 src={"/Featured1.webp"}
                 alt={"logo"}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
               />
               <Image
                 src={"/Featured2.webp"}
                 alt={"logo"}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
               />
               <Image
                 src={"/Featured3.webp"}
                 alt={"logo"}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
               />
               <Image
                 src={"/Featured4.webp"}
                 alt={"logo"}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
               />
             </div>
             </div>
-            <div className="flex-1">
+            <div className="md:flex flex-1 hidden">
               <Image
                 src={"/pichero.jpg"}
                 width={750}

@@ -6,6 +6,8 @@ import { BsCart } from "react-icons/Bs";
 
 
 
+
+
 export default function Header() {
   return (
     <>
