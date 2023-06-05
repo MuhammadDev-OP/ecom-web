@@ -1,42 +1,39 @@
-export const product = {
-    name: "product",
-    type: 'document',
-    title: 'Product',
-    fields : [
-        {
-        name: "title",
-        title: "Title",
-        type: "string",
+import { defineType, defineField } from "sanity";
+
+export const product = defineType({
+  name: "product",
+  type: "document",
+  title: "Product",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+    }),
+    {
+      name: "description",
+      title: "Description",
+      type: "string",
     },
     {
-        name: "description",
-        title: "Description",
-        type: "string",
-    }
-
-]
-
-}
-export const UnderGG = {
-    name: "things",
-    type: 'document',
-    title: 'Under GGG',
-    fields : [
+      name: "price",
+      title: "Product Price",
+      type: "number",
+    },
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+    },
+    defineField({
+      name: "category",
+      title: "Product category",
+      type: "reference",
+      to: [
         {
-            name: "title",
-            title: "Title",
-            type: "string"
+          type: "category",
         },
-        {
-            name: "description",
-            title: "Description",
-            type: "string",
-        },
-        {
-            name: "idImage",
-            title: "product image",
-            type: "image"
-        }
-    
-    ]
-}
+      ],
+    }),
+  ],
+});
