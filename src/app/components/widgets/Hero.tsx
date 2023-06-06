@@ -1,8 +1,47 @@
+'use client'
+
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
 import { BsCart } from "react-icons/Bs";
+import { Image as IImage } from "sanity";
+import { urlForImage } from "../../../../sanity/lib/image";
+import { client } from "@/app/lib/sanityClient";
+import { data } from "autoprefixer";
 
-export default function Hero() {
+
+
+export const getProductData = async () => {
+  const res = await client.fetch(`*[_type=="heroimage"]{
+        price,
+        image,
+        _id,
+        title,
+        category -> {
+          name
+        }
+      }`);
+  return res;
+};
+
+interface IProduct {
+  title: string;
+  _id: string;
+  description: string;
+  image: IImage;
+  price: number;
+  category: {
+    name: string;
+  };
+}
+
+
+
+
+
+
+export default async function Hero() {
+  const data: IProduct[] = await getProductData();
+
   return (
     <>
       <section className="mt-5 px-1">
@@ -14,6 +53,7 @@ export default function Hero() {
                   Sale 70%
                 </span>
               </p>
+              
 
               <h1 className="font-bold text-5xl sm:text-6xl  text-semibold">
                 An Industrial Take on Streetwear
@@ -64,12 +104,17 @@ export default function Hero() {
             </div>
             </div>
             <div className="md:flex flex-1 hidden">
+              <div>
+              
+            {data.map((item) => (
               <Image
-                src={"/pichero.jpg"}
+                src={urlForImage(item.image).url()}
                 width={750}
                 height={750}
                 alt="HeroImage"
               />
+            ))}
+            </div>
             </div>
             
           </div>
