@@ -1,3 +1,4 @@
+'use client'
 import { client } from "@/app/lib/sanityClient";
 import React from "react";
 import { StringRule } from "sanity";
@@ -34,7 +35,7 @@ export default async function slider() {
   const data: IProduct[] = await getProductData();
   return (
     <>
-      <section>
+      {/* <section>
         <Wrapper>
           <div>
             {data.map((item) => (
@@ -49,7 +50,7 @@ export default async function slider() {
             ))}
           </div>
         </Wrapper>
-      </section>
+      </section> */}
     </>
   );
 }
