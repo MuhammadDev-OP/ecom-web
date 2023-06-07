@@ -11,7 +11,7 @@ export default function Featured() {
               <h2 className="text-xs space tracking-widest font-bold text-blue-700 text-center">
                 PROMOTIONS
               </h2>
-              <h1 className="mt-1  text-xl sm:text-3xl font-semibold text-center text-bold">
+              <h1 className="mt-5  text-xl sm:text-3xl font-semibold text-center text-bold">
                 Our Promotions Events
               </h1>
             </div>
@@ -29,7 +29,7 @@ export default function Featured() {
               </div>
             </div> */}
 
-            <div className="flex flex-col mt-5">
+            <div className="flex flex-col mt-20">
               <div className="flex ">
                 <div className="flex p-24 bg-teal-400 mb-2 md:mb-0 md:mr-2">
                   <h2 className="flex">GET UP TO 60%</h2>
