@@ -6,11 +6,21 @@ export default function Featured() {
     <>
       <section>
         <Wrapper>
-          
+          <div className="content-center">
+            <div className="mt-10">
+              <h2 className="text-xs space tracking-widest font-bold text-blue-700 text-center">
+                PROMOTIONS
+              </h2>
+            </div>
 
+            <div>
+              <div className="bg-teal-400"> Hello M </div>
+            </div>
 
-
-
+            <div>
+              <div className=""></div>
+            </div>
+          </div>
         </Wrapper>
       </section>
     </>
