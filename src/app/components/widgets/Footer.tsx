@@ -1,7 +1,11 @@
+import Wrapper from "../shared/Wrapper";
+
 export default function Footer() {
   return (
+    
     <footer className="bg-zinc-900 rounded-lg shadow mt-20 dark:bg-gray-200 m-4">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <Wrapper>
+      <div className="max-w-screen-xl p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a href="/" className="flex items-center mb-4 sm:mb-0">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">
@@ -40,6 +44,7 @@ export default function Footer() {
           . All Rights Reserved.
         </span>
       </div>
+      </Wrapper>
     </footer>
   );
 }

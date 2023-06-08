@@ -8,6 +8,7 @@ import { urlForImage } from "../../../../sanity/lib/image";
 import { client } from "@/app/lib/sanityClient";
 import { data } from "autoprefixer";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const getProductData = async () => {
   const res = await client.fetch(`*[_type=="heroimage"]{
@@ -65,15 +66,24 @@ export default async function Hero() {
                 </button>
               </div> */}
 
-              <div>
-                <button className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2">
+              {/* <div> */}
+              {/* <button
+                  className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2"
+                >
                   <BsCart size={"1.5em"} style={{ fontWeight: "bold" }} />
-                  <span className="ml-2 font-bold">
-                    
-                    <Link href={"/Shopping.tsx"}> Start Shopping </Link>
-                  </span>
+                  <span className="ml-2 font-bold">Start Shopping</span>
                 </button>
-              </div>
+              </div> */}
+
+              <button className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2">
+                <Link href="/shopping">
+                  <div className="flex items-center">
+                    <BsCart size={"1.5em"} style={{ fontWeight: "bold" }} />
+                    <span className="ml-2 font-bold">Start Shopping</span>
+                  </div>
+                </Link>
+              </button>
+
               <div className="flex mt-10 items-center space-y-3 md:space-x-16 flex-col md:flex-row">
                 <Image
                   src={"/Featured1.webp"}
@@ -118,4 +128,7 @@ export default async function Hero() {
       </section>
     </>
   );
+}
+function toShoppingPage() {
+  throw new Error("Function not implemented.");
 }
