@@ -129,6 +129,3 @@ export default async function Hero() {
     </>
   );
 }
-function toShoppingPage() {
-  throw new Error("Function not implemented.");
-}
