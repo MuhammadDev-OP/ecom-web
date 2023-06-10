@@ -1,4 +1,4 @@
-"use client";
+
 
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
@@ -42,6 +42,7 @@ export default async function Hero() {
     <>
       <section className="mt-5 px-1">
         <Wrapper>
+          
           <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto">
             <div className="flex-1">
               <p className="flex mb-10 font-medium text-lg">
@@ -129,6 +130,4 @@ export default async function Hero() {
     </>
   );
 }
-function toShoppingPage() {
-  throw new Error("Function not implemented.");
-}
+
