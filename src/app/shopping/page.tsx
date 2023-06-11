@@ -44,21 +44,17 @@ export default async function shopping() {
         <div className="items-center max-w-screen-xl mx-auto mt-8">
           {data.map((item) => (
             <div>
-              <Link href={"/"}>
-                <div className="">
-                  <Image
-                    width={300}
-                    height={300}
-                    className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
-                    src={urlForImage(item.image).url()}
-                    alt={"product"}
-                  />
-                  <div className="mt-3 mb-4 font-semibold">
-                    <h2>{item.title}</h2>
-                    <h3>${item.price}</h3>
-                  </div>
-                </div>
-              </Link>
+              <div className="grid grid-cols-[repeat(2, auto)] justify-center gap-x-10 ">
+                <Image
+                  width={200}
+                  height={100}
+                  className="max-h-[200px] object-cover object-top"
+                  src={urlForImage(item.image).url()}
+                  alt={"product"}
+                />
+                <h2>{item.title}</h2>
+                <h3>${item.price}</h3>
+              </div>
             </div>
           ))}
         </div>
