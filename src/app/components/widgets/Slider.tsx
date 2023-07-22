@@ -7,29 +7,29 @@ import { urlForImage } from "../../../../sanity/lib/image";
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
 
-// export const getProductData = async () => {
-//   const res = await client.fetch(`*[_type=="product"]{
-//         price,
-//         image,
-//         _id,
-//         title,
-//         category -> {
-//           name
-//         }
-//       }`);
-//   return res;
-// };
+export const getProductData = async () => {
+  const res = await client.fetch(`*[_type=="product"]{
+        price,
+        image,
+        _id,
+        title,
+        category -> {
+          name
+        }
+      }`);
+  return res;
+};
 
-// interface IProduct {
-//   title: string;
-//   _id: string;
-//   description: string;
-//   image: IImage;
-//   price: number;
-//   category: {
-//     name: string;
-//   };
-// }
+interface IProduct {
+  title: string;
+  _id: string;
+  description: string;
+  image: IImage;
+  price: number;
+  category: {
+    name: string;
+  };
+}
 
 export default async function slider() {
  // const data: IProduct[] = await getProductData();

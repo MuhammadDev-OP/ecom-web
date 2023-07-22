@@ -10,8 +10,7 @@ export default async function Home() {
     <>
       <main>
         <Hero />
-        <Featured />.
-        <Crousel />
+        <Featured />
         <Footer />
         {/* <Shopping /> */}
       </main>
