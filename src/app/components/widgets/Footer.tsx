@@ -3,7 +3,7 @@ import Wrapper from "../shared/Wrapper";
 export default function Footer() {
   return (
     
-    <footer className="bg-zinc-900 rounded-lg shadow mt-20 dark:bg-gray-200 m-4">
+    <footer className="bg-zinc-100 rounded-lg shadow mt-20 dark:bg-gray-200 m-4">
     <Wrapper>
       <div className="max-w-screen-xl p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">

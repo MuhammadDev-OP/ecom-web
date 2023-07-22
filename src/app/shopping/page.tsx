@@ -1,22 +1,31 @@
-import Wrapper from "../components/shared/Wrapper";
-import Footer from "../components/widgets/Footer";
-import { client } from "../lib/sanityClient";
+"use client";
+import Image from "next/image";
+import { BsCart } from "react-icons/Bs";
 import { Image as IImage } from "sanity";
 
-export const getProductData = async () => {
+import { client } from "@/app/lib/sanityClient";
+import { data } from "autoprefixer";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Wrapper from "../components/shared/Wrapper";
+import { urlForImage } from "../../../sanity/lib/image";
+import Footer from "../components/widgets/Footer";
+import { product } from "../../../sanity/product";
+
+export const getPD = async () => {
   const res = await client.fetch(`*[_type=="product"]{
-        price,
-        image,
-        _id,
-        title,
-        category -> {
-          name
-        }
-      }`);
+          price,
+          image,
+          _id,
+          title,
+          category -> {
+            name
+          }
+        }`);
   return res;
 };
 
-interface IProduct {
+interface GProduct {
   title: string;
   _id: string;
   description: string;
@@ -27,18 +36,31 @@ interface IProduct {
   };
 }
 
-
-
-
-
-export default function shopping() {
+export default async function shopping() {
+  const data: GProduct[] = await getPD();
   return (
     <>
       <Wrapper>
         <div className="items-center max-w-screen-xl mx-auto mt-8">
-            <p>Hello</p>
-
-
+          {data.map((item) => (
+            <div>
+              <Link href={"/"} >
+              <div className="">
+                <Image
+                  width={300}
+                  height={300}
+                  className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
+                  src={urlForImage(item.image).url()}
+                  alt={"product"}
+                />
+                <div className="mt-3 mb-4 font-semibold">
+                <h2>{item.title}</h2>
+                <h3>${item.price}</h3>
+                </div>
+              </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </Wrapper>
       <Footer />

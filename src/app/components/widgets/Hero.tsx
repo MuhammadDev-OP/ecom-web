@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
 import { BsCart } from "react-icons/Bs";
@@ -42,7 +40,6 @@ export default async function Hero() {
     <>
       <section className="mt-5 px-1">
         <Wrapper>
-          
           <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto">
             <div className="flex-1">
               <p className="flex mb-10 font-medium text-lg">
@@ -75,15 +72,14 @@ export default async function Hero() {
                   <span className="ml-2 font-bold">Start Shopping</span>
                 </button>
               </div> */}
-
-              <button className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2">
-                <Link href="/shopping">
+              <Link href="/shopping">
+                <button className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2">
                   <div className="flex items-center">
                     <BsCart size={"1.5em"} style={{ fontWeight: "bold" }} />
                     <span className="ml-2 font-bold">Start Shopping</span>
                   </div>
-                </Link>
-              </button>
+                </button>
+              </Link>
 
               <div className="flex mt-10 items-center space-y-3 md:space-x-16 flex-col md:flex-row">
                 <Image
@@ -130,4 +126,3 @@ export default async function Hero() {
     </>
   );
 }
-
