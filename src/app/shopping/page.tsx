@@ -44,9 +44,9 @@ export default async function shopping() {
         <div className="items-center max-w-screen-xl mx-auto mt-8">
           {data.map((item) => (
             <div>
-<<<<<<< HEAD
-              <Link href={"/"} >
+              
               <div className="">
+              <Link href={"/"} >
                 <Image
                   width={300}
                   height={300}
@@ -57,25 +57,12 @@ export default async function shopping() {
                 <div className="mt-3 mb-4 font-semibold">
                 <h2>{item.title}</h2>
                 <h3>${item.price}</h3>
-                </div>
+                <div className="" >
+                <button className="bg-blue-500 p-2 border-2 rounded-lg">Add to Cart</button>
               </div>
-=======
-              <Link href={"/"}>
-                <div className="">
-                  <Image
-                    width={300}
-                    height={300}
-                    className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
-                    src={urlForImage(item.image).url()}
-                    alt={"product"}
-                  />
-                  <div className="mt-3 mb-4 font-semibold">
-                    <h2>{item.title}</h2>
-                    <h3>${item.price}</h3>
-                  </div>
                 </div>
->>>>>>> 139c4be25f371d8c3e6fe64795f42ab0f9f7d98b
               </Link>
+              </div>
             </div>
           ))}
         </div>
