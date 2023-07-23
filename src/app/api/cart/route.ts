@@ -22,7 +22,9 @@ export const POST = async (request: Request) => {
     
     const uid = uuid();
     const listCookies = cookies();
-    if (!cookies().has("user_id")) {
+    const user_id = cookies().get("user_id")?.value
+
+    if (!user_id) {
         listCookies.set("user_id", uid)
     }
 
@@ -30,8 +32,8 @@ export const POST = async (request: Request) => {
         const res = await db.insert(cartTable).values({
             product_id: req.product_id,
             quantity: 1,
-            user_id: cookies().get("user_id")?.value as string
-        })
+            user_id: user_id as string
+        }).returning();
         return NextResponse.json({ res })
     } catch (error) {
 

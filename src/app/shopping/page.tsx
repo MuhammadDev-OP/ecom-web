@@ -36,6 +36,17 @@ interface GProduct {
   };
 }
 
+const handleAddtoCart = async (item: any) => {
+  const res = fetch("/api/cart", {
+    method: "POST",
+    body: JSON.stringify({
+      product_id: item._id,
+    }),
+  });
+  const result = (await res).json;
+  console.log(result);
+};
+
 export default async function shopping() {
   const data: GProduct[] = await getPD();
   return (
@@ -44,24 +55,28 @@ export default async function shopping() {
         <div className="flex gap-10 items-center max-w-screen-xl mx-auto mt-8">
           {data.map((item) => (
             <div>
-              
               <div className="">
-              <Link href={"/"} >
-                <Image
-                  width={300}
-                  height={300}
-                  className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
-                  src={urlForImage(item.image).url()}
-                  alt={"product"}
-                />
-                <div className="mt-3 mb-4 font-semibold">
-                <h2>{item.title}</h2>
-                <h3>${item.price}</h3>
-                <div className="" >
-                <button className="bg-blue-500 p-2 border-2 rounded-lg">Add to Cart</button>
-              </div>
-                </div>
-              </Link>
+                <Link href={"/"}>
+                  <Image
+                    width={300}
+                    height={300}
+                    className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
+                    src={urlForImage(item.image).url()}
+                    alt={"product"}
+                  />
+                  <div className="mt-3 mb-4 font-semibold">
+                    <h2>{item.title}</h2>
+                    <h3>${item.price}</h3>
+                    <div className="">
+                      <button
+                        onClick={handleAddtoCart}
+                        className="bg-blue-500 p-2 border-2 rounded-lg"
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}
