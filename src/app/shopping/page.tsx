@@ -41,7 +41,7 @@ export default async function shopping() {
   return (
     <>
       <Wrapper>
-        <div className="items-center max-w-screen-xl mx-auto mt-8">
+        <div className="flex gap-10 items-center max-w-screen-xl mx-auto mt-8">
           {data.map((item) => (
             <div>
               
