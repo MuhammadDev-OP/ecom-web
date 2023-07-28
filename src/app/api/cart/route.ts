@@ -5,11 +5,8 @@ import { v4 as uuid } from "uuid";
 import { cookies } from "next/dist/client/components/headers";
 import { eq } from "drizzle-orm";
 
-cookies().get("user_id")?.value;
 
-fetch(
-  `http://localhost:3000/shopping?user_id=${cookies().get("user_id")?.value}`
-);
+ 
 
 export const GET = async (request: NextRequest) => {
   const req = request.nextUrl;
@@ -40,6 +37,9 @@ export const POST = async (request: NextRequest) => {
     setCookies.set("user_id", uid);
   }
 
+  fetch(
+    `http://localhost:3000/shopping?user_id=${cookies().get("user_id")?.value}`
+   );
   
 
   try {

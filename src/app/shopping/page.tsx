@@ -11,6 +11,7 @@ import Wrapper from "../components/shared/Wrapper";
 import { urlForImage } from "../../../sanity/lib/image";
 import Footer from "../components/widgets/Footer";
 import { product } from "../../../sanity/product";
+import ProductCard from "./ProductCard";
 
 export const getPD = async () => {
   const res = await client.fetch(`*[_type=="product"]{
@@ -36,16 +37,6 @@ interface GProduct {
   };
 }
 
-const handleAddtoCart = async (item: any) => {
-  const res = fetch("/api/cart", {
-    method: "POST",
-    body: JSON.stringify({
-      product_id: item._id,
-    }),
-  });
-  const result = (await res).json;
-  console.log(result);
-};
 
 export default async function shopping() {
   const data: GProduct[] = await getPD();
@@ -56,27 +47,18 @@ export default async function shopping() {
           {data.map((item) => (
             <div>
               <div className="">
-                <Link href={"/"}>
-                  <Image
-                    width={300}
-                    height={300}
-                    className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
-                    src={urlForImage(item.image).url()}
-                    alt={"product"}
-                  />
-                  <div className="mt-3 mb-4 font-semibold">
-                    <h2>{item.title}</h2>
-                    <h3>${item.price}</h3>
-                    <div className="">
-                      <button
-                        onClick={handleAddtoCart}
-                        className="bg-blue-500 p-2 border-2 rounded-lg"
-                      >
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                </Link>
+                <Image
+                  width={300}
+                  height={300}
+                  className="bg-yellow-300 flex-row rounded-lg max-h-[300px] object-cover object-top"
+                  src={urlForImage(item.image).url()}
+                  alt={"product"}
+                />
+                <div className="mt-3 mb-4 font-semibold">
+                  <h2>{item.title}</h2>
+                  <h3>${item.price}</h3>
+                  <ProductCard item={item} />
+                </div>
               </div>
             </div>
           ))}
