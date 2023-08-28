@@ -4,16 +4,12 @@ import Wrapper from "../shared/Wrapper";
 import { FiSearch } from "react-icons/fi";
 import { BsCart } from "react-icons/Bs";
 
-
-
-
-
 export default function Header() {
   return (
     <>
       <Wrapper>
         <header className="flex justify-between max-w-screen-xl mx-auto pt-6 pb-4 items-center sticky top-0">
-          <div className="text-xl font-bold">
+          <div onClick={() => {}} className="text-xl font-bold cursor-pointer">
             <h2>Dine Market</h2>
           </div>
 
@@ -45,10 +41,10 @@ export default function Header() {
             <BsCart size={"1.5em"} />
           </div>  */}
           <div className="flex relative mx-3">
-            <Link href={'/'}>
-            <div className="bg-slate-300 rounded-full p-2">
-              <BsCart className="text-black" size={20} />
-            </div>
+            <Link href={"/"}>
+              <div className="bg-slate-300 rounded-full p-2">
+                <BsCart className="text-black" size={20} />
+              </div>
             </Link>
             <div className="absolute top-0 right-0 bg-red-600 w-3 h-3 rounded-full"></div>
           </div>
