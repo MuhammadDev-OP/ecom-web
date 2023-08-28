@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
-import { BsCart } from "react-icons/Bs";
+// import { BsCart } from "react-icons/Bs";
 import { Image as IImage } from "sanity";
 import { urlForImage } from "../../../../sanity/lib/image";
 import { client } from "@/app/lib/sanityClient";
@@ -75,7 +75,7 @@ export default async function Hero() {
               <Link href="/shopping">
                 <button className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2">
                   <div className="flex items-center">
-                    <BsCart size={"1.5em"} style={{ fontWeight: "bold" }} />
+                    {/* <BsCart size={"1.5em"} style={{ fontWeight: "bold" }} /> */}
                     <span className="ml-2 font-bold">Start Shopping</span>
                   </div>
                 </button>
