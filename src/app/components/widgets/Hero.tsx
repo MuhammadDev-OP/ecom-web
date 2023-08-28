@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
 // import { BsCart } from "react-icons/Bs";
