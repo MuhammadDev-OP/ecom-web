@@ -13,26 +13,28 @@ import Footer from "../components/widgets/Footer";
 import { product } from "../../../sanity/product";
 import { FC } from "react";
 
-
 const ProductCard: FC<{ item: any }> = ({ item }) => {
-  const handleAddtoCart = async () => {
-    const res = await fetch("/api/cart", {
-      method: "POST",
-      body: JSON.stringify({
-        product_id: item._id,
-      }),
-    });
-    const result = await res.json();
-    console.log(result);
-  };
+  // const handleAddtoCart = async () => {
+  //   const res = await fetch("/api/cart", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       product_id: item._id,
+  //     }),
+  //   });
+  //   const result = await res.json();
+  //   console.log(result);
+  // };
 
   return (
     <>
-        <div className="">
-          <button onClick={handleAddtoCart} className="bg-blue-500 p-2 border-2 rounded-lg">
-            Add to Cart
-          </button>
-        </div>
+      <div className="">
+        <button
+          onClick={() => {}}
+          className="bg-blue-500 p-2 border-2 rounded-lg"
+        >
+          Add to Cart
+        </button>
+      </div>
     </>
   );
 };

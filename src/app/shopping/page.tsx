@@ -37,7 +37,6 @@ interface GProduct {
   };
 }
 
-
 export default async function shopping() {
   const data: GProduct[] = await getPD();
   return (

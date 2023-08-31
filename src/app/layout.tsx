@@ -1,14 +1,15 @@
 import "./globals.css";
 import Header from "./components/layout/header";
 
-import { Sora } from 'next/font/google';
+import { Sora } from "next/font/google";
+import ToastProvider from "./providers/ToastProvider";
 
 const sora = Sora({
-  weight: ['400','500','600','700','800' ],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -24,7 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={sora.className}>
         <Header />
-        
+        <ToastProvider />
+
         {children}
       </body>
     </html>
