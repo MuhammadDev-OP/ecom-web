@@ -1,6 +1,25 @@
 // import { NextResponse, NextRequest } from "next/server";
 // import { db, cartTable } from "@/app/lib/drizzle";
 
+import prisma from "@/app/libs/prismadb";
+import { NextResponse } from "next/server";
+
+export async function POST(request: Request) {
+  const body = await request.json();
+  const { imageSrc, id, quantity, type } = body;
+
+  const cartlisting = await prisma.cartlisting.create({
+    data: {
+      imageSrc,
+      id,
+      quantity,
+      type,
+    },
+  });
+
+  return NextResponse.json(cartlisting);
+}
+
 // import { v4 as uuid } from "uuid";
 // import { cookies } from "next/dist/client/components/headers";
 // import { eq } from "drizzle-orm";
@@ -48,5 +67,3 @@
 //     return NextResponse.json({ res });
 //   } catch (error) {}
 // };
-
-

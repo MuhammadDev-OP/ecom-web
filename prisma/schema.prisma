@@ -17,16 +17,16 @@ model User {
   email     String   @unique
   name      String?
 
-  product Product[]
+  cartlisting Cartlisting[]
 }
 
-model Product {
+model Cartlisting {
   id        String  @id @default(auto()) @map("_id") @db.ObjectId
   quantity  String?
-  type      String
-  imageSrc  String
-  userId    String  @db.ObjectId
-  createdAt String
+  type      String?
+  imageSrc  String?
+  userId    String? @db.ObjectId
+  createdAt String?
 
   User User? @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
