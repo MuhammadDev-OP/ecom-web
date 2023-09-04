@@ -1,57 +1,69 @@
+import React from "react";
 import Wrapper from "../shared/Wrapper";
 import Image from "next/image";
 
-export default function Featured() {
+const Promotion = () => {
   return (
-    <>
-      <section>
-        <Wrapper>
-          <div className="items-center max-w-screen-xl mx-auto">
-            <div className="mt-10">
-              <h2 className="text-xs space tracking-widest font-bold text-blue-700 text-center">
-                PROMOTIONS
-              </h2>
-              <h1 className="mt-5  text-xl sm:text-3xl font-semibold text-center text-bold">
-                Our Promotions Events
-              </h1>
-            </div>
-            {/* <div className="flex-1 mt-5">
-              <div>
-                <div className="flex bg-teal-400"> Hello M </div>
-                <div className="flex bg-orange-400">hell</div>
-              </div>
-
-              <div>
-                <div className="flex bg-teal-400"> Hello M </div>
-              </div>
-              <div>
-                <div className="flex bg-teal-800"> Helrllo d</div>
-              </div>
-            </div> */}
-
-            <div className="flex flex-col mt-20">
-              <div className="flex ">
-                <div className="flex p-24 bg-teal-400 mb-2 md:mb-0 md:mr-2">
-                  <h2 className="flex">GET UP TO 60%</h2>
-                  <p className="flex">For the summer reason</p>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row">
-              <div className="flex p-24 bg-orange-400">hell</div>
-
-                <div className="flex p-24 bg-teal-400 mb-2 md:mb-0 md:mr-2">
-                  Hello M
-                </div>
-                <div className="flex p-24 bg-teal-800">Helrllo d</div>
-              </div>
-            </div>
-
+    <Wrapper>
+      <p className="">Promotions</p>
+      <h3 className="my-4  first:mt-0 text-center">Our Promotions Event</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 w-full">
+        <div className="sm:col-span-2 space-y-2">
+          <div className=" bg-[#d6d6d8]  flex justify-center items-center px-5">
             <div>
-              <div className=""></div>
+              <h4>
+                GET UP TO <span className="text-2xl">60%</span>
+              </h4>
+              <p>For the summer season</p>
             </div>
+            <Image
+              src={"/promotions_image/5.jpg"}
+              alt=""
+              width={226}
+              height={226}
+            />
           </div>
-        </Wrapper>
-      </section>
-    </>
+          <div className="flex flex-col items-center justify-center  bg-[#212121] h-48 py-5 text-center text-white">
+            <h3>GET 30% Off</h3>
+            <p className="text-xs">USE PROMO CODE</p>
+            <button className="bg-[#474747] px-8 py-3 tracking-widest text-white text-xs mt-1">
+              DINEWEEKENDSALE
+            </button>
+          </div>
+        </div>
+        <div className=" bg-[#efe1c7]">
+          <div className="p-5">
+            <p>Flex Sweatshirt</p>
+            <p className="text-base">
+              <span className="line-through text-sm mr-1">$100.00</span> $75.00
+            </p>
+          </div>
+          <Image
+            alt=""
+            src={"/promotions_image/5.jpg"}
+            width={220}
+            height={220}
+            className="w-full h-auto max-w-full max-h-60 mx-auto"
+          />
+        </div>
+        <div className=" bg-[#d7d7d9]">
+          <div className="p-5">
+            <p className="capitalize">Flex Push button bombar</p>
+            <p className="text-base">
+              <span className="text-sm line-through mr-1">$225.00</span>$190.00
+            </p>
+          </div>
+          <Image
+            alt=""
+            src={"/promotions_image/5.jpg"}
+            width={220}
+            height={220}
+            className="mx-auto"
+          />
+        </div>
+      </div>
+    </Wrapper>
   );
-}
+};
+
+export default Promotion;

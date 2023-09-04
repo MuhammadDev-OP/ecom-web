@@ -1,5 +1,5 @@
-'use client'
-import { client } from "@/app/lib/sanityClient";
+"use client";
+import { client } from "@/lib/sanityClient";
 import React from "react";
 import { StringRule } from "sanity";
 import { Image as IImage } from "sanity";
@@ -32,7 +32,7 @@ interface IProduct {
 }
 
 export default async function slider() {
- // const data: IProduct[] = await getProductData();
+  // const data: IProduct[] = await getProductData();
   return (
     <>
       {/* <section>

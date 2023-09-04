@@ -3,7 +3,7 @@ import Image from "next/image";
 import { BsCart } from "react-icons/Bs";
 import { Image as IImage } from "sanity";
 
-import { client } from "@/app/lib/sanityClient";
+import { client } from "@/lib/sanityClient";
 import { data } from "autoprefixer";
 import Link from "next/link";
 import { useRouter } from "next/router";

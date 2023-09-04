@@ -30,7 +30,6 @@ export default async function Crousel() {
       <section>
         <Wrapper>
           <div className="flex flex-col md:flex-row items-center max-w-screen-xl mx-auto relative">
-
             <div className="my-2 max-w-lg md:max-xl lg:max-w-[284px] mx-8 px-8">
               <h1 className=" my-8 font-semibold text-lg">
                 Using Good Quality Materials dsfsfsd
@@ -64,12 +63,11 @@ export default async function Crousel() {
               </p>
             </div>
 
-
             <div className="flex flex-col md:flex-row justify-center">
               {data.map((item) => (
-                <div >
+                <div>
                   <Image
-                  className="bg-stone-300 pt-8 px-8"
+                    className="bg-stone-300 pt-8 px-8"
                     src={urlForImage(item.image).url()}
                     width={750}
                     height={650}
@@ -80,7 +78,7 @@ export default async function Crousel() {
             </div>
             <div className="flex flex-col md:flex-row justify-center">
               {data.map((item) => (
-                <div className="my-8 mx-8 max-w-[720px] " >
+                <div className="my-8 mx-8 max-w-[720px] ">
                   {/* <div className="absolute">
                     <h1 className="font-extrabold text-4xl">{item.title}</h1>
                   </div> */}
