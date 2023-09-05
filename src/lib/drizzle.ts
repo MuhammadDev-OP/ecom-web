@@ -3,7 +3,7 @@ import { sql } from "@vercel/postgres";
 import { drizzle } from "drizzle-orm/vercel-postgres";
 import { InferModel } from "drizzle-orm";
 
-export const cartTable = pgTable("cart", {
+export const cartTable = pgTable("cart_ecom", {
   id: serial("id").primaryKey().notNull(),
   user_id: varchar("user_id", { length: 255 }).notNull(),
   product_id: varchar("product_id", { length: 255 }).notNull(),
@@ -12,7 +12,7 @@ export const cartTable = pgTable("cart", {
   image: text("image").notNull(),
   price: integer("price").notNull(),
   quantity: integer("quantity").notNull(),
-  totalprice: integer("total_price").notNull(),
+  totalprice: integer("totalprice").notNull(),
 });
 
 export type Cart = InferModel<typeof cartTable>;
