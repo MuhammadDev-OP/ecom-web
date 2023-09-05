@@ -2,11 +2,11 @@ import React from "react";
 import Wrapper from "../shared/Wrapper";
 import Image from "next/image";
 
-const Promotion = () => {
+const Featured = () => {
   return (
     <Wrapper>
-      <div className="max-w-screen-xl mx-auto">
-        <div className="text-center">
+      <div className="max-w-screen-xl mx-auto mt-10">
+        <div className="text-center mt-5 mb-20">
           <p className="text-blue-700 font-semibold">PROMOTIONS</p>
           <h1 className="text-3xl mb-4 font-bold first:mt-0 text-center">
             Our Promotions Event
@@ -74,4 +74,4 @@ const Promotion = () => {
   );
 };
 
-export default Promotion;
+export default Featured;

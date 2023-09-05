@@ -108,14 +108,23 @@ export default async function Hero() {
                 />
               </div>
             </div>
-            <div className="md:flex flex-1 hidden">
+            <div className="absolute top-50 left-10 w-72 h-72 bg-lime-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div className="absolute top-50 left-4 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div className="md:flex ml-36 space-x-44 mt-5 flex-1 hidden bg-transparent">
               <div>
                 {data.map((item) => (
                   <Image
                     src={urlForImage(item.image).url()}
-                    width={750}
-                    height={750}
+                    width={500}
+                    height={500} // Set both width and height to be the same for a square shape
                     alt="HeroImage"
+                    className="rounded-full object-cover"
+                    style={{
+                      backgroundColor: "#e9ecec", // Background color
+                      clipPath: "polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%)", // Adjust the clip path to create the desired shape
+                      width: "90%",
+                      height: "100%",
+                    }}
                   />
                 ))}
               </div>
