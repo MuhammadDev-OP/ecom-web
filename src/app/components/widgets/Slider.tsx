@@ -1,63 +1,128 @@
 "use client";
 import { client } from "@/lib/sanityClient";
-import React, { useEffect } from "react";
-import { StringRule } from "sanity";
+import React, { useEffect, useState } from "react";
 import { Image as IImage } from "sanity";
 import { urlForImage } from "../../../../sanity/lib/image";
 import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
 import { useRouter } from "next/navigation";
-import { product } from "../../../../sanity/product";
 
-export const getSliderData = async () => {
-  const res = await client.fetch(`*[_type=="product"]{
-        price,
-        image,
-        _id,
-        title,
-        category -> {
-          name
-        }
-      }`);
-  return res;
+const getSliderData = async () => {
+  try {
+    const res = await client.fetch(`*[_type=="sliderImage"]{
+      price,
+      image,
+      _id,
+      title,
+      category -> {
+        name
+      }
+    }`);
+    console.log("Fetched data:", res);
+    return res;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
 };
 
 interface ISlider {
-  price: number;
   title: string;
   _id: string;
   description: string;
   image: IImage;
+  price: number | any;
+  category: {
+    name: string;
+  };
 }
 
-const Slider = async () => {
-  const data: ISlider[] = await getSliderData();
+const Slider = () => {
   const router = useRouter();
 
   return (
     <>
       <section>
         <Wrapper>
-          <div className="flex flex-col md:flex-row items-center justify-center max-w-screen-xl mx-auto mt-8">
-            <div className="text-center mt-5 mb-20">
-              <p className="text-blue-700 font-semibold">PRODUCTS</p>
-              <h1 className="text-3xl mb-4 font-bold first:mt-0">
-                Our Beautiful Product
-              </h1>
-            </div>
-            {data.map((item) => (
-              <div
-                key={item._id}
-                onClick={() => router.push("/shopping")}
-                className="flex gap-10"
-              >
-                <Image src={urlForImage(item.image).url()} alt={"prod_image"} />
-                <div className="">
-                  <h2>{item.title}</h2>
-                  <h3>${item.price}</h3>
-                </div>
+          <div className="text-center mt-16 mb-20">
+            <p className="text-blue-700 font-semibold">PRODUCTS</p>
+            <h1 className="text-3xl mb-4 font-bold first:mt-0">
+              Our Beautiful Product
+            </h1>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center max-w-screen-xl mx-auto mt-8 gap-16 ">
+            <div
+              className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
+              onClick={() => router.push("/shopping")}
+            >
+              {" "}
+              {/* Added margin for spacing */}
+              <Image
+                width={300}
+                height={300}
+                className="bg-rose-200 rounded-lg max-h-[500px] object-cover object-top "
+                src={"/man_png.png"}
+                alt={"product"}
+              />
+              <div className="mt-3 mb-4 font-semibold">
+                <h2>Shirt Bomber</h2>
+                <h3>$10</h3>
               </div>
-            ))}
+            </div>
+            <div
+              className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
+              onClick={() => router.push("/shopping")}
+            >
+              {" "}
+              {/* Added margin for spacing */}
+              <Image
+                width={300}
+                height={300}
+                className="bg-yellow-200 rounded-lg max-h-[500px] object-cover object-top "
+                src={"/man_png.png"}
+                alt={"product"}
+              />
+              <div className="mt-3 mb-4 font-semibold">
+                <h2>Shirt Bomber</h2>
+                <h3>$10</h3>
+              </div>
+            </div>
+            <div
+              className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
+              onClick={() => router.push("/shopping")}
+            >
+              {" "}
+              {/* Added margin for spacing */}
+              <Image
+                width={300}
+                height={300}
+                className="bg-teal-200 rounded-lg max-h-[500px] object-cover object-top "
+                src={"/man_png.png"}
+                alt={"product"}
+              />
+              <div className="mt-3 mb-4 font-semibold">
+                <h2>Shirt Bomber</h2>
+                <h3>$10</h3>
+              </div>
+            </div>
+            <div
+              className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
+              onClick={() => router.push("/shopping")}
+            >
+              {" "}
+              {/* Added margin for spacing */}
+              <Image
+                width={300}
+                height={300}
+                className="bg-lime-200 rounded-lg max-h-[500px] object-cover object-top "
+                src={"/man_png.png"}
+                alt={"product"}
+              />
+              <div className="mt-3 mb-4 font-semibold">
+                <h2>Shirt Bomber</h2>
+                <h3>$10</h3>
+              </div>
+            </div>
           </div>
         </Wrapper>
       </section>

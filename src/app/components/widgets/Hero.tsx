@@ -108,7 +108,7 @@ export default async function Hero() {
                 />
               </div>
             </div>
-            <div className="absolute top-50 left-10 w-72 h-72 bg-lime-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div className="absolute top-48 left-14 w-72 h-72 bg-lime-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             <div className="absolute top-50 left-4 w-72 h-72 bg-rose-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             <div className="md:flex ml-36 space-x-44 mt-5 flex-1 hidden bg-transparent">
               <div>
