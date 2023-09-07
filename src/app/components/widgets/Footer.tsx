@@ -1,50 +1,91 @@
+import Image from "next/image";
 import Wrapper from "../shared/Wrapper";
+import { FaFacebook, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
 
-export default function Footer() {
+const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
-    
-    <footer className="bg-zinc-100 rounded-lg shadow mt-20 dark:bg-gray-200 m-4">
-    <Wrapper>
-      <div className="max-w-screen-xl p-4 md:py-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <a href="/" className="flex items-center mb-4 sm:mb-0">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">
-              Dine Market
-            </span>
-          </a>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-900 sm:mb-0 dark:text-gray-900">
-            <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6 ">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6 ">
-                Licensing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Contact
-              </a>
-            </li>
-          </ul>
+    <footer className="text-[#666666] mt-64">
+      {/* main footer */}
+      <Wrapper>
+        <div className="flex flex-col w-full lg:flex-row justify-between lg:items-start mb-10">
+          {/* image and its content */}
+          <div className="w-2/6 flex flex-col gap-12 mt-6 lg:mt-2 ">
+            <h1 className="font-bold text-4xl">Dine Market</h1>
+            <p>
+              Small, artisan label that offers a thoughtfully curated collection
+              of high quality everyday essentials made.
+            </p>
+            <div className="flex items-start gap-x-5">
+              <div className="w-10 flex justify-center items-center h-10 rounded-xl bg-gray-200">
+                {" "}
+                <FaTwitter fill="black" color="black" />
+              </div>
+              <div className="w-10 flex justify-center items-center h-10 rounded-xl bg-gray-200">
+                <FaFacebook fill="black" color="black" />
+              </div>
+              <div className="w-10 flex justify-center items-center h-10 rounded-xl bg-gray-200">
+                <FaLinkedinIn fill="black" color="black" />
+              </div>
+            </div>
+          </div>
+
+          {/* company and its content */}
+          <div className="w-[20%] flex flex-col gap-3">
+            <h3>Company</h3>
+            <Link href={""}>About</Link>
+            <Link href={""}>Terms of Use</Link>
+            <Link href={""}>Privacy Policy</Link>
+            <Link href={""}>How it Works</Link>
+            <Link href={""}>Contact Us</Link>
+          </div>
+
+          {/* Support and its content */}
+          <div className="w-[20%] flex flex-col gap-3">
+            <h3>Support</h3>
+            <Link href={""}>Support Carrer</Link>
+            <Link href={""}>24h Services</Link>
+            <Link href={""}>Quick Chat</Link>
+          </div>
+
+          {/* Contact and its content */}
+          <div className="w-[20%] flex flex-col gap-3">
+            <h3>Contact</h3>
+            <Link href={""}>Whatsapp</Link>
+            <Link href={""}>Support 24h</Link>
+          </div>
         </div>
-        <hr className="my-6 border-zinc-800 sm:mx-auto dark:border-gray-100 lg:my-8" />
-        <span className="block text-sm text-black sm:text-center dark:text-black">
-          © 2023{" "}
-          <a href="/" className="hover:underline">
-            Dine Market™
-          </a>
-          . All Rights Reserved.
-        </span>
-      </div>
       </Wrapper>
+      {/* copyright and its content */}
+      <div className="border-t border-black w-full">
+        <div className=" max-w-[1240px] w-full mx-auto lg:px-20 py-5 px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-5">
+            <div className="">Copyright &copy; {year} Dine Market </div>
+            <div className="">
+              Design by:{" "}
+              <Link
+                href={"https://www.mkdev.live/"}
+                className="font-bold text-black"
+              >
+                Muhammad Dev
+              </Link>
+            </div>
+            <div className="">
+              Code by:{" "}
+              <Link
+                href={"https://github.com/muhammaddev-op"}
+                className="font-bold text-black"
+              >
+                MuhammadDev-OP on Github
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
-}
+};
+
+export default Footer;
