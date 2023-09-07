@@ -76,7 +76,9 @@ export default async function Hero() {
                 <button className="flex bg-zinc-900 text-white p-5 mt-8 border-slate-600 border-2">
                   <div className="flex items-center">
                     {/* <BsCart size={"1.5em"} style={{ fontWeight: "bold" }} /> */}
-                    <span className="ml-2 font-bold">Start Shopping</span>
+                    <span className="ml-2 text-xl font-bold">
+                      Start Shopping
+                    </span>
                   </div>
                 </button>
               </Link>
