@@ -53,7 +53,7 @@ const Slider = () => {
           <div className="flex flex-col md:flex-row items-center justify-center max-w-screen-xl mx-auto mt-8 gap-16 ">
             <div
               className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
-              onClick={() => router.push("/shopping")}
+              onClick={() => router.push("/cartmodal")}
             >
               {" "}
               {/* Added margin for spacing */}
@@ -71,7 +71,7 @@ const Slider = () => {
             </div>
             <div
               className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
-              onClick={() => router.push("/shopping")}
+              onClick={() => router.push("/cartmodal")}
             >
               {" "}
               {/* Added margin for spacing */}
@@ -89,7 +89,7 @@ const Slider = () => {
             </div>
             <div
               className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
-              onClick={() => router.push("/shopping")}
+              onClick={() => router.push("/cartmodal")}
             >
               {" "}
               {/* Added margin for spacing */}
@@ -107,7 +107,7 @@ const Slider = () => {
             </div>
             <div
               className="md:ml-4 mb-4 md:mb-0 transition hover:scale-95 ease-in"
-              onClick={() => router.push("/shopping")}
+              onClick={() => router.push("/cartmodal")}
             >
               {" "}
               {/* Added margin for spacing */}
